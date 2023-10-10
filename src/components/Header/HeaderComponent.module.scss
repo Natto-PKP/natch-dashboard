@@ -1,0 +1,199 @@
+@use '../../styles/variables/colors';
+@use '../../styles/variables/responsive';
+
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: colors.$dark-color;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 1.5rem 0.75rem 1rem;
+
+  @include responsive.desktop {
+    padding: 3rem 3rem 2rem;
+  }
+
+  @include responsive.tablet {
+    padding: 3rem 3rem 2rem;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    @include responsive.desktop {
+      max-width: responsive.$desktop;
+    }
+
+    @include responsive.tablet {
+      max-width: responsive.$desktop;
+    }
+
+    .navigation {
+      .title {
+        display: flex;
+        align-items: center;
+        align-self: flex-start;
+        gap: 1rem;
+        font-family: 'Tilt Neon', cursive;
+        font-size: 1.4rem;
+        color: colors.$light-color;
+        letter-spacing: 0.15rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        @include responsive.desktop {
+          font-size: 1.8rem;
+        }
+
+        @include responsive.tablet {
+          font-size: 1.8rem;
+        }
+
+        h1 {
+          display: none;
+
+          @include responsive.desktop {
+            display: block;
+          }
+
+          @include responsive.tablet {
+            display: block;
+          }
+        }
+
+        img {
+          width: 3rem;
+          height: 3rem;
+          border-radius: 50%;
+        }
+      }
+
+      .nav-links {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          color: colors.$light-color;
+          font-size: 1.2rem;
+          font-weight: 400;
+          letter-spacing: 0.1rem;
+          padding: 0.5rem 1.5rem;
+          font-family: 'Fragment Mono', monospace;
+          transition: 0.2s ease-in-out;
+          border-bottom: 2px solid transparent;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+          }
+
+          &:hover,
+          .active {
+            border-bottom: 2px solid colors.$primary-color;
+          }
+        }
+      }
+    }
+
+    .user {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 3rem;
+      background-color: transparent;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+      padding: 0 1.5rem;
+      height: 3rem;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+
+        svg {
+          color: colors.$danger-color;
+        }
+
+        .content img {
+          border: 2px solid colors.$danger-color;
+        }
+      }
+
+      .content {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        img {
+          display: none;
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          border: 2px solid transparent;
+          transition: 0.2s ease-in-out;
+
+          @include responsive.desktop {
+            display: block;
+          }
+
+          @include responsive.tablet {
+            display: block;
+          }
+        }
+
+        span {
+          color: colors.$light-color;
+          font-size: 1rem;
+          font-weight: 400;
+          letter-spacing: 0.1rem;
+          font-family: 'Fragment Mono', monospace;
+          text-transform: uppercase;
+        }
+      }
+
+      svg {
+        color: colors.$light-color;
+        transition: 0.2s ease-in-out;
+      }
+    }
+
+    .login {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+      color: colors.$light-color;
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.1rem;
+      padding: 0 1.5rem;
+      height: 3rem;
+      border-radius: 8px;
+      font-family: 'Fragment Mono', monospace;
+      text-transform: uppercase;
+      transition: 0.2s ease-in-out;
+
+      svg {
+        transition: 0.2s ease-in-out;
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+
+        svg {
+          color: colors.$success-color;
+        }
+      }
+    }
+  }
+}

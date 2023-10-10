@@ -1,0 +1,9 @@
+{
+  "short_name": "Natch",
+  "name": "Natch dashboard",
+  "icons": [{}],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#2b1f35",
+  "background_color": "#be4c69"
+}

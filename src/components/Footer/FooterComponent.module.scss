@@ -1,0 +1,63 @@
+@use '../../styles/variables/colors';
+@use '../../styles/variables/responsive';
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 1rem 1rem;
+  background-color: colors.$secondary-color-dark;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  @include responsive.desktop {
+    background-color: colors.$dark-color;
+  }
+
+  @include responsive.tablet {
+    background-color: colors.$dark-color;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.25rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: colors.$light-color;
+      font-family: sans-serif;
+      transition: 0.2s ease-in-out;
+
+      @include responsive.desktop {
+        font-size: 0.75rem;
+        font-weight: 400;
+        letter-spacing: 0.1rem;
+      }
+
+      @include responsive.tablet {
+        font-size: 0.75rem;
+        font-weight: 400;
+        letter-spacing: 0.1rem;
+      }
+
+      &:hover {
+        color: colors.$primary-color;
+      }
+    }
+  }
+
+  .credits {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    color: colors.$light-color;
+    font-family: sans-serif;
+    font-size: 0.75rem;
+  }
+}

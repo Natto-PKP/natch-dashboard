@@ -1,0 +1,79 @@
+@use '../../styles/variables/colors';
+@use '../../styles/variables/responsive';
+
+.body {
+  background-color: colors.$secondary-color-dark;
+}
+
+.main {
+  min-height: 500px;
+  height: 100vh;
+
+  .side {
+    @include responsive.mobile {
+      display: none;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    .noUser {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+
+      .panel {
+        padding: 1.5rem;
+        background-color: colors.$light-color;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        font-size: 1.2rem;
+        font-weight: 500;
+        text-align: center;
+        color: colors.$secondary-color-dark;
+        font-family: 'Tilt Neon', cursive;
+      }
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 2rem 1rem 1rem;
+      color: rgba(colors.$light-color, 0.75);
+
+      button {
+        background-color: transparent;
+        border: none;
+        color: rgba(colors.$light-color, 0.75);
+      }
+
+      h2 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        font-family: 'Tilt Neon', cursive;
+      }
+    }
+
+    .content {
+      .guilds {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+        background-color: red;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.test {
+  background-color: red;
+  height: 80rem;
+}
